@@ -1,15 +1,14 @@
 {
+  "root": true,
+  "env": { "browser": true, "es2020": true },
   "extends": [
     "next/core-web-vitals",
     "eslint:recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
-    "plugin:storybook/recommended",
-    "plugin:prettier"
+    "plugin:storybook/recommended"
   ],
-  "plugins": ["prettier"],
   "rules": {
-    "prettier/prettier": "error",
     "react-refresh/only-export-components": [
       "warn",
       {
