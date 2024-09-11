@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 // Constants
 import { END_POINT } from '@/constants';
 
@@ -17,5 +19,9 @@ export const PlaceWrapper = async () => {
     return <div>Failed to load</div>;
   }
 
-  return <PlacesSection data={data || []} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PlacesSection data={data || []} />
+    </Suspense>
+  );
 };

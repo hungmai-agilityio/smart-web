@@ -5,12 +5,11 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:react-hooks/recommended",
     "plugin:storybook/recommended",
-    "plugin:storybook/recommended"
+    "plugin:prettier"
   ],
-  "plugins": [
-    "prettier"
-  ],
+  "plugins": ["prettier"],
   "rules": {
+    "prettier/prettier": "error",
     "react-refresh/only-export-components": [
       "warn",
       {

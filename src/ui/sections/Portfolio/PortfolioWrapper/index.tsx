@@ -1,3 +1,5 @@
+import { Suspense } from 'react';
+
 // Constants
 import { END_POINT } from '@/constants';
 
@@ -17,5 +19,9 @@ export const PortfolioWrapper = async () => {
     return <div>Failed to load</div>;
   }
 
-  return <PortfolioSection data={data || []} />;
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <PortfolioSection data={data || []} />
+    </Suspense>
+  );
 };
