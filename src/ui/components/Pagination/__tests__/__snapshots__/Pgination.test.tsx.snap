@@ -1,0 +1,71 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pagination Component should be render match to snapshot 1`] = `
+<div>
+  <div
+    class="flex justify-center gap-5 mt-4"
+  >
+    <button
+      class="px-3"
+    >
+      <div
+        class="relative w-[16px] h-[16px]"
+      >
+        <img
+          alt="prev icon"
+          class="transition-opacity duration-300"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/prev-icon.svg"
+          style="color: transparent; object-fit: cover;"
+          width="16"
+        />
+      </div>
+    </button>
+    <button
+      class="px-4 py-2 "
+    >
+      1
+    </button>
+    <button
+      class="px-4 py-2 bg-white text-second rounded-full drop-shadow-lg"
+    >
+      2
+    </button>
+    <button
+      class="px-4 py-2 "
+    >
+      3
+    </button>
+    <span>
+      ...
+    </span>
+    <button
+      class="px-4 py-2 "
+    >
+      5
+    </button>
+    <button
+      class="px-3"
+    >
+      <div
+        class="relative w-[16px] h-[16px]"
+      >
+        <img
+          alt="next icon"
+          class="transition-opacity duration-300"
+          data-nimg="1"
+          decoding="async"
+          height="16"
+          loading="lazy"
+          src="/next-icon.svg"
+          style="color: transparent; object-fit: cover;"
+          width="16"
+        />
+      </div>
+    </button>
+  </div>
+</div>
+`;

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`StatsRow component should be render match to snapshot 1`] = `
+<div>
+  <div
+    class="flex px-3 justify-between md:items-center w-full"
+  >
+    <div
+      class="flex gap-1 items-center"
+    >
+      <div
+        class="w-icon-xs h-icon-xxs"
+      >
+        <div
+          class="relative w-full h-full"
+        >
+          <img
+            alt="view icon"
+            class="transition-opacity duration-300"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            src="/view-dark.svg"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+          />
+        </div>
+      </div>
+      <p
+        class="xl:w-10 w-8 truncate overflow-hidden"
+      >
+        12345
+      </p>
+    </div>
+    <div
+      class="flex gap-1 items-center"
+    >
+      <div
+        class="w-icon-xxs h-icon-xxs"
+      >
+        <div
+          class="relative w-full h-full"
+        >
+          <img
+            alt="likes icon"
+            class="transition-opacity duration-300"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            src="/likes.svg"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+          />
+        </div>
+      </div>
+      <p
+        class="xl:w-10 w-8 truncate overflow-hidden"
+      >
+        1111
+      </p>
+    </div>
+    <div
+      class="flex gap-1 items-center"
+    >
+      <div
+        class="w-icon-xxs h-icon-xxs"
+      >
+        <div
+          class="relative w-full h-full"
+        >
+          <img
+            alt="comments icon"
+            class="transition-opacity duration-300"
+            data-nimg="fill"
+            decoding="async"
+            loading="lazy"
+            src="/comments.svg"
+            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+          />
+        </div>
+      </div>
+      <p
+        class="xl:w-10 w-8 truncate overflow-hidden"
+      >
+        5432
+      </p>
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,102 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`should be render match to snapshot 1`] = `
+<div>
+  <div
+    class="grid md:grid-cols-4 grid-cols-1 w-5/6 gap-6 mx-auto"
+  >
+    <div
+      class="flex flex-col animate-pulse"
+    >
+      <div
+        class="xl:w-pro-lg xl:h-pro-lg md:w-pro-md md:h-pro-md w-pro-sm h-pro-sm mx-auto bg-gray-300 rounded-full"
+      />
+      <div
+        class="mt-4 md:h-32 text-center"
+      >
+        <div
+          class="h-6 bg-gray-300 rounded w-3/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-2/4 mx-auto"
+        />
+      </div>
+      <div
+        class="mt-5 mx-auto bg-gray-300 rounded w-24 h-8"
+      />
+    </div>
+    <div
+      class="flex flex-col animate-pulse"
+    >
+      <div
+        class="xl:w-pro-lg xl:h-pro-lg md:w-pro-md md:h-pro-md w-pro-sm h-pro-sm mx-auto bg-gray-300 rounded-full"
+      />
+      <div
+        class="mt-4 md:h-32 text-center"
+      >
+        <div
+          class="h-6 bg-gray-300 rounded w-3/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-2/4 mx-auto"
+        />
+      </div>
+      <div
+        class="mt-5 mx-auto bg-gray-300 rounded w-24 h-8"
+      />
+    </div>
+    <div
+      class="flex flex-col animate-pulse"
+    >
+      <div
+        class="xl:w-pro-lg xl:h-pro-lg md:w-pro-md md:h-pro-md w-pro-sm h-pro-sm mx-auto bg-gray-300 rounded-full"
+      />
+      <div
+        class="mt-4 md:h-32 text-center"
+      >
+        <div
+          class="h-6 bg-gray-300 rounded w-3/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-2/4 mx-auto"
+        />
+      </div>
+      <div
+        class="mt-5 mx-auto bg-gray-300 rounded w-24 h-8"
+      />
+    </div>
+    <div
+      class="flex flex-col animate-pulse"
+    >
+      <div
+        class="xl:w-pro-lg xl:h-pro-lg md:w-pro-md md:h-pro-md w-pro-sm h-pro-sm mx-auto bg-gray-300 rounded-full"
+      />
+      <div
+        class="mt-4 md:h-32 text-center"
+      >
+        <div
+          class="h-6 bg-gray-300 rounded w-3/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-1/4 mx-auto mb-2"
+        />
+        <div
+          class="h-4 bg-gray-300 rounded w-2/4 mx-auto"
+        />
+      </div>
+      <div
+        class="mt-5 mx-auto bg-gray-300 rounded w-24 h-8"
+      />
+    </div>
+  </div>
+</div>
+`;

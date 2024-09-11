@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem Should match snapshot 1`] = `
+<div>
+  <a
+    href="/home"
+  >
+    <div
+      class="flex items-center mb-3 relative cursor-pointer"
+    >
+      <p
+        class="font-bold lg:text-lg text-sm hover:text-second uppercase"
+      >
+        home
+      </p>
+    </div>
+  </a>
+</div>
+`;

@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hero component should be render match to snapshot 1`] = `
+<div>
+  <div
+    class="relative container w-full h-hero"
+  >
+    <div
+      class="relative w-full h-full"
+    >
+      <img
+        alt="Hero Background"
+        class="transition-opacity duration-300"
+        data-nimg="fill"
+        decoding="async"
+        fetchpriority="high"
+        sizes="100vw"
+        src="/_next/image?url=%2Fbackground-hero.webp&w=3840&q=75"
+        srcset="/_next/image?url=%2Fbackground-hero.webp&w=640&q=75 640w, /_next/image?url=%2Fbackground-hero.webp&w=750&q=75 750w, /_next/image?url=%2Fbackground-hero.webp&w=828&q=75 828w, /_next/image?url=%2Fbackground-hero.webp&w=1080&q=75 1080w, /_next/image?url=%2Fbackground-hero.webp&w=1200&q=75 1200w, /_next/image?url=%2Fbackground-hero.webp&w=1920&q=75 1920w, /_next/image?url=%2Fbackground-hero.webp&w=2048&q=75 2048w, /_next/image?url=%2Fbackground-hero.webp&w=3840&q=75 3840w"
+        style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
+      />
+    </div>
+    <div
+      class="absolute  inset-0 flex flex-col items-center justify-center"
+    >
+      <p>
+        Text content
+      </p>
+      <div
+        class="mt-10"
+      >
+        <button
+          class="text-primary px-2 rounded-full font-light truncate w-24 h-6 text-xs sm:w-28 sm:h-8 sm:text-sm md:w-36 md:h-10 md:text-base lg:w-52 lg:h-12 lg:text-lg bg-second"
+        >
+          Button Name
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
