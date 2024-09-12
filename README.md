@@ -16,7 +16,7 @@
 - Plan: [Plan practice next.js](https://docs.google.com/document/d/1NxesoAxul6KavhpGiXoTpsrDsgGTDH-D1kIwF2LyfEU/edit?usp=sharing)
 - Total: working days
   - Start: 29th Aug 2024
-  - End:
+  - End: 10th Sep 2024
 
 ## TARGET
 
