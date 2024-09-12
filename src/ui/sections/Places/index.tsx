@@ -1,4 +1,5 @@
 'use client';
+
 import { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
@@ -58,10 +59,12 @@ export const PlacesSection = ({ data }: PlaceSectionProps) => {
     router.push(`?${params.toString()}`, { scroll: false });
   };
 
+  const MAX_ITEMS = 6;
+  const places = filteredData.slice(0, MAX_ITEMS);
+
   return (
     <div className="my-16 text-primary">
       <Heading styles={`${montserrat.className} text-center`}>Places</Heading>
-
       {/* Desktop View - Category List */}
       <ul
         className={`${abel.className} my-8 md:flex hidden lg:gap-48 gap-16 justify-center`}
@@ -78,7 +81,6 @@ export const PlacesSection = ({ data }: PlaceSectionProps) => {
           </li>
         ))}
       </ul>
-
       {/* Mobile View - Category Dropdown */}
       <div className="md:hidden flex justify-center my-8">
         <Dropdown
@@ -90,8 +92,8 @@ export const PlacesSection = ({ data }: PlaceSectionProps) => {
       {/* Image Grid */}
       <Suspense fallback={<SkeletonImage col="3" row={6} />}>
         <div className="grid md:grid-cols-3 grid-cols-2 gap-6 w-4/6 mx-auto">
-          {filteredData.length > 0 ? (
-            filteredData.map((item) => (
+          {places.length > 0 ? (
+            places.map((item) => (
               <div
                 key={item.id}
                 className="w-full lg:h-place-lg md:h-place-md h-place-sm mx-auto"

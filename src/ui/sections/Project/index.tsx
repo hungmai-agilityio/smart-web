@@ -35,6 +35,9 @@ export const ProjectSection = ({ data }: ProjectSectionProps) => {
     ? filterByCategory(data, 'category', selectedCategory)
     : [];
 
+  const MAX_ITEMS = 8;
+  const projects = filteredData.slice(0, MAX_ITEMS);
+
   // Get unique categories
   const categories = Array.from(new Set(data.map((item) => item.category)));
 
@@ -90,9 +93,9 @@ export const ProjectSection = ({ data }: ProjectSectionProps) => {
         <Dropdown items={dropdownItems} onSelect={handleCategorySelect} />
       </div>
 
-      <Suspense fallback={<SkeletonImage col='4' row={8}/>}>
+      <Suspense fallback={<SkeletonImage col="4" row={8} />}>
         <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6 w-5/6 mx-auto">
-          {filteredData.map((item) => (
+          {projects.map((item) => (
             <div
               key={item.id}
               className="flex flex-col items-center border rounded-lg shadow-md"
