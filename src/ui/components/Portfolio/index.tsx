@@ -24,7 +24,7 @@ export const Portfolio = ({ images }: PortfolioProps) => {
         {images.map((item) => (
           <div key={item.id} className="w-full h-portfolio">
             <Photo src={item.image} alt={item.name} autoSize>
-              <div className="flex w-full md:justify-end">
+              <div className="flex w-full md:justify-end p-4">
                 <div className="lg:w-1/2">
                   <Heading styles="xl:text-3xl lg:text-xl font-bold text-base">
                     {item.name}
@@ -41,7 +41,7 @@ export const Portfolio = ({ images }: PortfolioProps) => {
                     {item.detail}
                   </p>
 
-                  <div className="md:flex xl:gap-10 gap-5 mt-4 hidden text-sm">
+                  <div className="md:flex xl:gap-10 lg:gap-2 gap-5 mt-4 hidden text-sm">
                     <div className="flex gap-3 items-center">
                       <Photo
                         src="/view-white.svg"

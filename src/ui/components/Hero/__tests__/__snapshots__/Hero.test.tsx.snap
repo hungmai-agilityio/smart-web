@@ -3,7 +3,7 @@
 exports[`Hero component should be render match to snapshot 1`] = `
 <div>
   <div
-    class="relative container w-full h-hero"
+    class="relative w-full h-hero"
   >
     <div
       class="relative w-full h-full"
