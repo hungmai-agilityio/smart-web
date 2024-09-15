@@ -33,3 +33,8 @@ export interface IProject {
   favorite: number;
   comment: number;
 }
+
+export type ISearchParams = {
+  [key: string]: string | undefined;
+  page?: string;
+};

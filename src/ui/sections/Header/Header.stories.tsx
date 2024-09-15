@@ -1,8 +1,8 @@
-import { Footer } from '@/ui/layouts/Footer';
+import { Header } from '@/ui/sections/Header';
 import { Meta, StoryObj } from '@storybook/react';
 
-const meta: Meta<typeof Footer> = {
-  component: Footer,
+const meta: Meta<typeof Header> = {
+  component: Header,
 
   parameters: {
     nextjs: {
@@ -13,7 +13,7 @@ const meta: Meta<typeof Footer> = {
 
 export default meta;
 
-type Story = StoryObj<typeof Footer>;
+type Story = StoryObj<typeof Header>;
 
 export const Default: Story = {
   args: {}

@@ -1,25 +1,34 @@
 // Constants
 import { montserrat } from '@/constants/fonts';
 
+// Interfaces
+import { ISearchParams } from '@/interface';
+
 // Components
 import { Description, Heading, Hero } from '@/ui/components';
 
 // Sections
-import { PlaceWrapper, PortfolioWrapper, ProductWrapper, ProjectWrapper } from '@/ui/sections';
+import { Place, Product, Project } from '@/ui/sections';
 
-export default function Home() {
+interface HomeProps {
+  searchParams: ISearchParams;
+}
+
+export default function Home({ searchParams }: HomeProps) {
   return (
-    <main className={`${montserrat.className} md:container my-0 mx-auto`}>
+    <main className={`${montserrat.className} container my-0 mx-auto`}>
       <Hero imageUrl="/background-hero.webp" buttonName="Download">
         <Heading styles="text-white">Welcome to SmartWeb</Heading>
         <Description styles="font-thin text-white lg:text-3xl md:text-sm text-xs mt-14">
           Discover a World of Technological Advancements
         </Description>
       </Hero>
-      <PlaceWrapper />
-      <ProductWrapper />
-      <ProjectWrapper />
-      <PortfolioWrapper />
+      <Place searchParams={searchParams} />
+      <Product />
+
+      <Project searchParams={searchParams} />
+      {/*
+      <PortfolioWrapper /> */}
     </main>
   );
 }

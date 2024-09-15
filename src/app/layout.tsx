@@ -4,8 +4,8 @@ import './globals.css';
 // Constants
 import { abel } from '@/constants/fonts';
 
-// Layouts
-import { Header, Footer } from '@/ui/layouts';
+// Section
+import { Footer, Header } from '@/ui/sections';
 
 export const metadata: Metadata = {
   title: 'Smart web',

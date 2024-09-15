@@ -14,7 +14,7 @@ interface HeroProps {
 
 export const Hero = ({ imageUrl, children, buttonName }: HeroProps) => {
   return (
-    <div className="relative w-full h-hero">
+    <div className="relative container w-full h-hero">
       <Photo src={imageUrl} alt="Hero Background" autoSize priority />
       <div className="absolute  inset-0 flex flex-col items-center justify-center">
         {children}

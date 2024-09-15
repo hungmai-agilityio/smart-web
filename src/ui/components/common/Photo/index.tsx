@@ -52,7 +52,7 @@ export const Photo = ({
         {...res}
       />
       {hovered && children && (
-        <div className="absolute inset-0 flex items-center bg-black bg-opacity-50 text-white">
+        <div className="absolute inset-0 flex items-center bg-black bg-opacity-50 text-white p-4">
           {children}
         </div>
       )}

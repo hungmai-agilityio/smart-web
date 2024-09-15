@@ -38,7 +38,7 @@ export const PortfolioSection = ({ data }: PortfolioSectionProps) => {
   };
 
   return (
-    <section className={`${abel.className} my-28 w-5/6 mx-auto text-primary`}>
+    <section className={`${abel.className} my-28 text-primary`}>
       <Heading styles={`${montserrat.className} text-center`}>
         Portfolio
       </Heading>
