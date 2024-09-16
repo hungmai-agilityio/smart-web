@@ -36,5 +36,4 @@ export interface IProject {
 
 export type ISearchParams = {
   [key: string]: string | undefined;
-  page?: string;
 };

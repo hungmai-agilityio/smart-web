@@ -8,7 +8,7 @@ import { ISearchParams } from '@/interface';
 import { Description, Heading, Hero } from '@/ui/components';
 
 // Sections
-import { Place, Product, Project } from '@/ui/sections';
+import { Place, Portfolio, Product, Project } from '@/ui/sections';
 
 interface HomeProps {
   searchParams: ISearchParams;
@@ -27,8 +27,7 @@ export default function Home({ searchParams }: HomeProps) {
       <Product />
 
       <Project searchParams={searchParams} />
-      {/*
-      <PortfolioWrapper /> */}
+      <Portfolio searchParams={searchParams} />
     </main>
   );
 }
