@@ -21,7 +21,7 @@ export const ProjectList = async ({ searchParams }: ProjectListProps) => {
   const param = query ? `?category=${query}` : '';
 
   // Fetch data for filtered projects
-  const { data } = await getData(`${END_POINT.PROJECTS}${param}`);
+  const { data } = await getData<IProject>(`${END_POINT.PROJECTS}${param}`);
 
   const filtered = data as IProject[];
   const projects = filtered.slice(0, maxItems);

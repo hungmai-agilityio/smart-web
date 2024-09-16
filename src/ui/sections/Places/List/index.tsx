@@ -13,7 +13,7 @@ const PlaceList = async ({ searchParams }: PlaceListProps) => {
   const param = query ? `?category=${query}` : '';
 
   // Fetch data for filtered places
-  const { data } = await getData(`${END_POINT.PLACES}${param}`);
+  const { data } = await getData<IPlace>(`${END_POINT.PLACES}${param}`);
 
   const filtered = data as IPlace[];
   const places = filtered.slice(0, maxItems);

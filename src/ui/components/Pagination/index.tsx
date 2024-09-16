@@ -1,20 +1,23 @@
+'use client';
+
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Photo } from '@/ui/components/common';
 
 interface PaginationProps {
   pageCount: number;
   currentPage: number;
-  onPageChange: (page: number) => void;
 }
 
-export const Pagination = ({
-  pageCount,
-  currentPage,
-  onPageChange
-}: PaginationProps) => {
+export const Pagination = ({ pageCount, currentPage }: PaginationProps) => {
+  const router = useRouter();
+  const searchParams = useSearchParams();
+
   // Handles page index changes
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= pageCount) {
-      onPageChange(page);
+      const params = new URLSearchParams(searchParams.toString());
+      params.set('portfolio-page', page.toString());
+      router.push(`?${params.toString()}`, { scroll: false });
     }
   };
 
@@ -26,7 +29,7 @@ export const Pagination = ({
       <button
         key={page}
         className={`px-4 py-2 ${currentPage === page ? 'bg-white text-second rounded-full drop-shadow-lg' : ''}`}
-        onClick={() => handlePageChange(page)}
+        onClick={handlePageChange.bind(null, page)}
       >
         {page}
       </button>
@@ -72,7 +75,6 @@ export const Pagination = ({
         />
       </button>
       {renderPageNumbers()}
-
       <button
         className="px-3"
         onClick={handlePageChange.bind(null, currentPage + 1)}

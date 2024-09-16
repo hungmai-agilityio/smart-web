@@ -1,17 +1,26 @@
+import { render, screen, fireEvent } from '@testing-library/react';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { Pagination } from '@/ui/components/Pagination';
-import { render, fireEvent, screen } from '@testing-library/react';
+
+// Mock useRouter and useSearchParams
+jest.mock('next/navigation', () => ({
+  useRouter: jest.fn(),
+  useSearchParams: jest.fn()
+}));
 
 describe('Pagination Component', () => {
-  const mockOnPageChange = jest.fn();
+  const push = jest.fn();
+  const searchParams = new URLSearchParams();
+  const pageCount = 5;
+  const currentPage = 1;
 
-  test('renders with default props', () => {
-    render(
-      <Pagination
-        pageCount={5}
-        currentPage={1}
-        onPageChange={mockOnPageChange}
-      />
-    );
+  beforeEach(() => {
+    (useRouter as jest.Mock).mockReturnValue({ push });
+    (useSearchParams as jest.Mock).mockReturnValue(searchParams);
+  });
+
+  it('should render pagination buttons correctly', () => {
+    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
 
     expect(screen.getByAltText('prev icon')).toBeInTheDocument();
     expect(screen.getByAltText('next icon')).toBeInTheDocument();
@@ -22,71 +31,27 @@ describe('Pagination Component', () => {
     expect(screen.getByText('5')).toBeInTheDocument();
   });
 
-  test('disables prev button on the first page', () => {
-    render(
-      <Pagination
-        pageCount={5}
-        currentPage={1}
-        onPageChange={mockOnPageChange}
-      />
-    );
+  it('disables prev button on the first page', () => {
+    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
 
     const prevButton = screen.getByAltText('prev icon').closest('button');
     expect(prevButton).toBeDisabled();
   });
 
-  test('disables next button on the last page', () => {
-    render(
-      <Pagination
-        pageCount={5}
-        currentPage={5}
-        onPageChange={mockOnPageChange}
-      />
-    );
+  it('should call router.push with correct URL when page changes', () => {
+    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
 
-    const nextButton = screen.getByAltText('next icon').closest('button');
-    expect(nextButton).toBeDisabled();
-  });
-
-  test('calls onPageChange when page is clicked', () => {
-    render(
-      <Pagination
-        pageCount={5}
-        currentPage={1}
-        onPageChange={mockOnPageChange}
-      />
-    );
-    const index = screen.getByText('2');
-    fireEvent.click(index);
-    expect(mockOnPageChange).toHaveBeenCalledWith(2);
-  });
-
-  test('calls onPageChange when next/prev buttons are clicked', () => {
-    render(
-      <Pagination
-        pageCount={5}
-        currentPage={2}
-        onPageChange={mockOnPageChange}
-      />
-    );
-
-    const prevButton = screen.getByAltText('prev icon').closest('button');
-
-    fireEvent.click(prevButton!);
-    expect(mockOnPageChange).toHaveBeenCalledWith(1);
+    // Click next page button
     const nextButton = screen.getByAltText('next icon').closest('button');
 
     fireEvent.click(nextButton!);
-    expect(mockOnPageChange).toHaveBeenCalledWith(3);
+
+    expect(push).toHaveBeenCalledWith('?portfolio-page=2', { scroll: false });
   });
 
   it('should be render match to snapshot', () => {
     const { container } = render(
-      <Pagination
-        pageCount={5}
-        currentPage={2}
-        onPageChange={mockOnPageChange}
-      />
+      <Pagination pageCount={pageCount} currentPage={currentPage} />
     );
 
     expect(container).toMatchSnapshot();

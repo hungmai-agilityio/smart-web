@@ -1,55 +1,32 @@
-'use client';
-
-import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense } from 'react';
 
 // Constants
 import { abel, montserrat } from '@/constants';
 
 // Interfaces
-import { IPortfolio } from '@/interface';
+import { ISearchParams } from '@/interface';
+
+// Sections
+import { PortfolioSection } from '@/ui/sections';
 
 // Components
-import { Heading, Pagination, Portfolio } from '@/ui/components';
+import { Heading, SkeletonImage } from '@/ui/components';
 
-interface PortfolioSectionProps {
-  data: IPortfolio[];
+interface PortfolioProps {
+  searchParams: ISearchParams;
 }
 
-export const PortfolioSection = ({ data }: PortfolioSectionProps) => {
-  const searchParams = useSearchParams();
-  const router = useRouter();
-
-  // Use URL search params to determine the current page
-  const currentPage = searchParams.get('portfolio-page')
-    ? parseInt(searchParams.get('portfolio-page') as string, 10)
-    : 1;
-
-  const limit = 6;
-  const totalItems = data.length;
-  const totalPages = Math.ceil(totalItems / limit);
-
-  const startIndex = (currentPage - 1) * limit;
-  const selectedImages = data.slice(startIndex, startIndex + limit);
-
-  const handlePageChange = (newPage: number) => {
-    const params = new URLSearchParams(searchParams.toString());
-    params.set('portfolio-page', newPage.toString());
-    router.push(`?${params.toString()}`, { scroll: false });
-  };
+export const Portfolio = async ({ searchParams }: PortfolioProps) => {
+  const currentPage = Number(searchParams['portfolio-page']) || 1;
 
   return (
     <section className={`${abel.className} my-28 text-primary`}>
       <Heading styles={`${montserrat.className} text-center`}>
         Portfolio
       </Heading>
-      <div className="my-8">
-        <Portfolio images={selectedImages} />
-        <Pagination
-          pageCount={totalPages}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
-      </div>
+      <Suspense key={currentPage} fallback={<SkeletonImage col="2" row={6} />}>
+        <PortfolioSection currentPage={currentPage} />;
+      </Suspense>
     </section>
   );
 };
