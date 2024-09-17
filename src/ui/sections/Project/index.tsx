@@ -34,11 +34,7 @@ export const Project = async ({ searchParams }: ProjectProps) => {
       <Heading styles={`${montserrat.className} text-center`}>
         Our Projects
       </Heading>
-      <Category
-        categories={categories}
-        selectedCategory={query}
-        queryParam="project-query"
-      />
+      <Category categories={categories} queryParam="project-query" />
       <Suspense key={query} fallback={<SkeletonImage col="4" row={8} />}>
         <ProjectList searchParams={searchParams} />
       </Suspense>

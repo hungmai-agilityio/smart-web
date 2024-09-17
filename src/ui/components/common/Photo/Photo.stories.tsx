@@ -25,6 +25,10 @@ const meta: Meta<typeof Photo> = {
     },
     autoSize: {
       description: 'Automatically size the image based on the container'
+    },
+    isBlur: {
+      description:
+        'To be used as a placeholder image before the src image successfully loads.'
     }
   }
 };
@@ -37,6 +41,7 @@ export const Default: Story = {
   args: {
     src: '/background-hero.webp',
     alt: 'Hero Background',
+    isBlur: true,
     fixedSize: { width: 500, height: 500 }
   }
 };

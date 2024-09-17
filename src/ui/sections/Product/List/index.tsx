@@ -19,7 +19,7 @@ const ProductSection = ({ data }: ProductSectionProps) => {
       {data.map((item) => (
         <div key={item.id} className="flex flex-col">
           <div className="xl:w-pro-lg xl:h-pro-lg md:w-pro-md md:h-pro-md w-pro-sm h-pro-sm mx-auto">
-            <Photo src={item.image} alt={item.name} autoSize isCircle>
+            <Photo src={item.image} alt={item.name} autoSize isCircle isBlur>
               <div className="w-full">
                 <div className="w-10 h-icon-sm mx-auto">
                   <Photo

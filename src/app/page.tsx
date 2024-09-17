@@ -25,7 +25,6 @@ export default function Home({ searchParams }: HomeProps) {
       </Hero>
       <Place searchParams={searchParams} />
       <Product />
-
       <Project searchParams={searchParams} />
       <Portfolio searchParams={searchParams} />
     </main>

@@ -18,13 +18,7 @@ describe('Category Component', () => {
   const categories = ['Category1', 'Category2', 'Category3'];
 
   it('should render categories', () => {
-    render(
-      <Category
-        categories={categories}
-        selectedCategory="Category1"
-        queryParam="query"
-      />
-    );
+    render(<Category categories={categories} queryParam="query" />);
 
     categories.forEach((category) => {
       const elements = screen.queryAllByText(category);

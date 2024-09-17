@@ -9,6 +9,7 @@ interface PhotoProps extends ImageProps {
   isCircle?: boolean;
   fixedSize?: { width: number; height: number };
   autoSize?: boolean;
+  isBlur?: boolean;
 }
 
 export const Photo = ({
@@ -19,6 +20,7 @@ export const Photo = ({
   isCircle,
   fixedSize,
   autoSize,
+  isBlur,
   ...res
 }: PhotoProps) => {
   const [hovered, setHovered] = useState(false);
@@ -49,6 +51,12 @@ export const Photo = ({
         className={clsx('transition-opacity duration-300', {
           'opacity-50': hovered && children
         })}
+        placeholder={isBlur ? 'blur' : 'empty'}
+        blurDataURL={
+          isBlur
+            ? 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mPkNA3fBAACLQFJQfEBVAAAAABJRU5ErkJggg=='
+            : undefined
+        }
         {...res}
       />
       {hovered && children && (

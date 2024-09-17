@@ -30,11 +30,7 @@ export const Place = async ({ searchParams }: PlaceWrapperProps) => {
   return (
     <div className="my-16 text-primary">
       <Heading styles={`${montserrat.className} text-center`}>Places</Heading>
-      <Category
-        categories={categories}
-        selectedCategory={query}
-        queryParam="place-query"
-      />
+      <Category categories={categories} queryParam="place-query" />
       <Suspense key={query} fallback={<SkeletonImage col="3" row={6} />}>
         <PlaceList searchParams={searchParams} />
       </Suspense>

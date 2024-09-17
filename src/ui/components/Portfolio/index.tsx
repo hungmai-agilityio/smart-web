@@ -22,7 +22,7 @@ export const Portfolio = ({ images }: PortfolioProps) => {
     <div className="grid md:grid-cols-2 grid-cols-1">
       {images.map((item) => (
         <div key={item.id} className="w-full h-portfolio">
-          <Photo src={item.image} alt={item.name} autoSize>
+          <Photo src={item.image} alt={item.name} autoSize isBlur>
             <div className="flex w-full md:justify-end">
               <div className="lg:w-1/2">
                 <Heading styles="xl:text-3xl lg:text-xl font-bold text-base">

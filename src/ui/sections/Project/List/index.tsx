@@ -33,7 +33,7 @@ export const ProjectList = async ({ searchParams }: ProjectListProps) => {
           className="flex flex-col items-center border rounded-lg shadow-md"
         >
           <div className="w-full aspect-image relative">
-            <Photo src={item.image} alt={item.name} autoSize>
+            <Photo src={item.image} alt={item.name} autoSize isBlur>
               <StatsRow
                 views={item.views}
                 favorite={item.favorite}

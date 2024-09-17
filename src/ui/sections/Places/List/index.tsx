@@ -10,7 +10,7 @@ const PlaceList = async ({ searchParams }: PlaceListProps) => {
   const maxItems = 6;
 
   const query = searchParams['place-query'] ?? '';
-  const param = query ? `?category=${query}` : '';
+  const param = query && `?category=${query}`;
 
   // Fetch data for filtered places
   const { data } = await getData<IPlace>(`${END_POINT.PLACES}${param}`);
@@ -26,7 +26,7 @@ const PlaceList = async ({ searchParams }: PlaceListProps) => {
             key={item.id}
             className="w-full lg:h-place-lg md:h-place-md h-place-sm mx-auto"
           >
-            <Photo src={item.image} alt={item.name} autoSize />
+            <Photo src={item.image} alt={item.name} autoSize isBlur/>
           </div>
         ))
       ) : (
