@@ -5,15 +5,11 @@ exports[`NavItem Should match snapshot 1`] = `
   <a
     href="/home"
   >
-    <div
-      class="flex items-center mb-3 relative cursor-pointer"
+    <p
+      class="font-bold lg:text-lg md:text-base text-xs hover:text-second uppercase mb-3"
     >
-      <p
-        class="font-bold lg:text-lg text-sm hover:text-second uppercase"
-      >
-        home
-      </p>
-    </div>
+      home
+    </p>
   </a>
 </div>
 `;

@@ -34,7 +34,7 @@ export const Header = () => {
   return (
     <header
       ref={menuRef}
-      className="bg-white lg:container mt-6 mx-auto flex items-center justify-between flex-row relative"
+      className="bg-white lg:container mt-6 mx-auto flex items-center justify-between flex-row relative lg:mb-0 mb-5"
     >
       <div className="cursor-pointer" onClick={handleHomeRedirect}>
         <Photo
@@ -46,7 +46,7 @@ export const Header = () => {
       </div>
 
       <div
-        className="md:hidden flex items-center mr-3 cursor-pointer"
+        className="md:hidden flex items-center cursor-pointer"
         onClick={toggleMenu}
       >
         <Photo
@@ -61,7 +61,7 @@ export const Header = () => {
         className={`
           md:flex gap-7 ${menuOpen ? 'block' : 'hidden'}
           md:relative absolute top-full left-0 w-full md:w-auto z-10 transition-all ease-in-out
-          bg-white p-5 drop-shadow-lg md:drop-shadow-none mr-28
+          bg-white p-5 drop-shadow-lg md:drop-shadow-none lg:mr-28 md:mr-8
         `}
       >
         <NavItem name="home" url={END_POINT.HOME} />

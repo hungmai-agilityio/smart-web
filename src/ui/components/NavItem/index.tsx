@@ -9,11 +9,9 @@ interface NavItemProps {
 export const NavItem = ({ name, url }: NavItemProps) => {
   return (
     <Link href={url || '#'}>
-      <div className="flex items-center mb-3 relative cursor-pointer">
-        <p className="font-bold lg:text-lg text-sm hover:text-second uppercase">
-          {name}
-        </p>
-      </div>
+      <p className="font-bold lg:text-lg md:text-base text-xs hover:text-second uppercase mb-3">
+        {name}
+      </p>
     </Link>
   );
 };
