@@ -23,7 +23,7 @@ export const Header = () => {
   };
 
   return (
-    <header className="bg-white md:container mt-6 mx-auto flex items-center justify-between flex-row relative">
+    <header className="bg-white lg:container mt-6 mx-auto flex items-center justify-between flex-row relative">
       <div className="cursor-pointer" onClick={handleHomeRedirect}>
         <Photo
           src="/logo.svg"

@@ -10,7 +10,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="md:container mt-6 mx-auto bg-black lg:bg-opacity-90 bg-opacity-85 text-white xl:py-28 xl:px-36 py-10 px-10 md:text-base text-sm">
+    <footer className="lg:container mt-6 mx-auto bg-black lg:bg-opacity-90 bg-opacity-85 text-white xl:py-28 xl:px-36 py-10 px-10 md:text-base text-sm">
       <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
         <div className="flex flex-col">
           <h3 className="font-bold uppercase mb-4">Contact Us</h3>

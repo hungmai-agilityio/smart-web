@@ -1,5 +1,3 @@
-import { Suspense } from 'react';
-
 // Interfaces
 import { IProduct } from '@/interface';
 

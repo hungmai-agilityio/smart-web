@@ -16,7 +16,7 @@ interface HomeProps {
 
 export default function Home({ searchParams }: HomeProps) {
   return (
-    <main className={`${montserrat.className} container my-0 mx-auto`}>
+    <main className={`${montserrat.className} lg:container my-0 mx-auto`}>
       <Hero imageUrl="/background-hero.webp" buttonName="Download">
         <Heading styles="text-white">Welcome to SmartWeb</Heading>
         <Description styles="font-thin text-white lg:text-3xl md:text-sm text-xs mt-14">

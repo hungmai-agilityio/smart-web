@@ -27,9 +27,8 @@ export const PortfolioSection = async ({
   const selectedImages = data!.slice(startIndex, startIndex + limit);
 
   return (
-    <div className="my-8">
+    <div className="my-8 mx-5">
       <Portfolio images={selectedImages} />
-
       <Pagination pageCount={totalPages} currentPage={currentPage} />
     </div>
   );

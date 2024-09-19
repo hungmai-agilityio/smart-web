@@ -38,7 +38,7 @@ export const Category = memo(({ categories, queryParam }: CategoryProps) => {
   return (
     <>
       <ul
-        className={`${abel.className} my-8 md:flex hidden lg:gap-48 gap-16 justify-center`}
+        className={`${abel.className} my-8 md:flex hidden xl:gap-28 md:gap-16 justify-center`}
       >
         {categories.map((category, index) => (
           <li
