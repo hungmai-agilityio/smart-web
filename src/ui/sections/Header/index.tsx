@@ -1,5 +1,5 @@
 'use client';
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { useRouter } from 'next/navigation';
 
 // Constants
@@ -9,10 +9,14 @@ import { END_POINT } from '@/constants';
 import { Photo } from '@/ui/components/common';
 import { NavItem } from '@/ui/components/NavItem';
 
+// Hooks
+import { useOutsideClick } from '@/hooks';
+
 export const Header = () => {
   const router = useRouter();
+  const menuRef = useRef<HTMLDivElement>(null);
 
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [menuOpen, setMenuOpen] = useState<boolean>(false);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
@@ -22,8 +26,16 @@ export const Header = () => {
     router.push('/');
   };
 
+  useOutsideClick({
+    ref: menuRef,
+    handler: () => setMenuOpen(false)
+  });
+
   return (
-    <header className="bg-white lg:container mt-6 mx-auto flex items-center justify-between flex-row relative">
+    <header
+      ref={menuRef}
+      className="bg-white lg:container mt-6 mx-auto flex items-center justify-between flex-row relative"
+    >
       <div className="cursor-pointer" onClick={handleHomeRedirect}>
         <Photo
           src="/logo.svg"
