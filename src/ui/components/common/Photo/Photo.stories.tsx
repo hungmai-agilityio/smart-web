@@ -50,6 +50,7 @@ export const WithHoverContent: Story = {
   args: {
     src: 'https://i.ibb.co/KwS0QKz/san-3.webp',
     alt: 'San 3',
+    styles: 'max-w-[200px]',
     children: (
       <div className="flex gap-2">
         <p>Hover Content</p>
@@ -65,6 +66,7 @@ export const Circular: Story = {
     src: 'https://i.ibb.co/KwS0QKz/san-3.webp',
     alt: 'San 3',
     fixedSize: { width: 200, height: 200 },
+    styles: 'max-w-[200px]',
     isCircle: true,
     children: (
       <div className="flex gap-2">
