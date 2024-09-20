@@ -64,9 +64,8 @@ export const Circular: Story = {
   args: {
     src: 'https://i.ibb.co/KwS0QKz/san-3.webp',
     alt: 'San 3',
-    styles: 'w-[200px] h-[200px]',
+    fixedSize: { width: 200, height: 200 },
     isCircle: true,
-    autoSize: true,
     children: (
       <div className="flex gap-2">
         <p>Hover Content</p>
