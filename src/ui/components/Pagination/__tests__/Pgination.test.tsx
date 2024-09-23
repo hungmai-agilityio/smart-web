@@ -9,18 +9,20 @@ jest.mock('next/navigation', () => ({
 }));
 
 describe('Pagination Component', () => {
-  const push = jest.fn();
+  const replace = jest.fn();
   const searchParams = new URLSearchParams();
-  const pageCount = 5;
-  const currentPage = 1;
 
+  const defaultProps = {
+    pageCount: 5,
+    queryPage: 'page'
+  };
   beforeEach(() => {
-    (useRouter as jest.Mock).mockReturnValue({ push });
+    (useRouter as jest.Mock).mockReturnValue({ replace });
     (useSearchParams as jest.Mock).mockReturnValue(searchParams);
   });
 
   it('should render pagination buttons correctly', () => {
-    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
+    render(<Pagination {...defaultProps} />);
 
     expect(screen.getByAltText('prev icon')).toBeInTheDocument();
     expect(screen.getByAltText('next icon')).toBeInTheDocument();
@@ -32,27 +34,24 @@ describe('Pagination Component', () => {
   });
 
   it('disables prev button on the first page', () => {
-    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
+    render(<Pagination {...defaultProps} />);
 
     const prevButton = screen.getByAltText('prev icon').closest('button');
     expect(prevButton).toBeDisabled();
   });
 
-  it('should call router.push with correct URL when page changes', () => {
-    render(<Pagination pageCount={pageCount} currentPage={currentPage} />);
+  it('should call router.replace with correct URL when previous button is clicked', () => {
+    searchParams.set('page', '2');
+    render(<Pagination {...defaultProps} />);
 
-    // Click next page button
-    const nextButton = screen.getByAltText('next icon').closest('button');
+    const prevButton = screen.getByAltText('prev icon').closest('button');
+    fireEvent.click(prevButton!);
 
-    fireEvent.click(nextButton!);
-
-    expect(push).toHaveBeenCalledWith('?portfolio-page=2', { scroll: false });
+    expect(replace).toHaveBeenCalledWith('?page=1', { scroll: false });
   });
 
   it('should be render match to snapshot', () => {
-    const { container } = render(
-      <Pagination pageCount={pageCount} currentPage={currentPage} />
-    );
+    const { container } = render(<Pagination {...defaultProps} />);
 
     expect(container).toMatchSnapshot();
   });

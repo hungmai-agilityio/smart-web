@@ -15,9 +15,6 @@ const meta: Meta<typeof Pagination> = {
   argTypes: {
     pageCount: {
       description: 'Total number of pages'
-    },
-    currentPage: {
-      description: 'The current active page number'
     }
   }
 };
@@ -29,6 +26,6 @@ type Story = StoryObj<typeof Pagination>;
 export const Default: Story = {
   args: {
     pageCount: 10,
-    currentPage: 1
+    queryPage: 'page'
   }
 };

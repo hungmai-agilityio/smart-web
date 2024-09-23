@@ -7,7 +7,7 @@ import { abel, montserrat } from '@/constants';
 import { ISearchParams } from '@/interface';
 
 // Sections
-import { PortfolioSection } from '@/ui/sections';
+import { PortfolioList } from '@/ui/sections';
 
 // Components
 import { Heading, SkeletonImage } from '@/ui/components';
@@ -17,7 +17,8 @@ interface PortfolioProps {
 }
 
 export const Portfolio = async ({ searchParams }: PortfolioProps) => {
-  const currentPage = Number(searchParams['portfolio-page']) || 1;
+  const queryPage = 'portfolio-page';
+  const currentPage = Number(searchParams[queryPage]) || 1;
 
   return (
     <section className={`${abel.className} my-28 text-primary`}>
@@ -25,7 +26,7 @@ export const Portfolio = async ({ searchParams }: PortfolioProps) => {
         Portfolio
       </Heading>
       <Suspense key={currentPage} fallback={<SkeletonImage col="2" row={6} />}>
-        <PortfolioSection currentPage={currentPage} />;
+        <PortfolioList currentPage={currentPage} queryPage={queryPage} />;
       </Suspense>
     </section>
   );

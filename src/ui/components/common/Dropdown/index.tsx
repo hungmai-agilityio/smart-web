@@ -1,6 +1,6 @@
 'use client';
 
-import { useRef, useState, useEffect, useCallback, useMemo, memo } from 'react';
+import { useRef, useState, useCallback, useMemo, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { useOutsideClick } from '@/hooks/useOutsideClick';
@@ -46,8 +46,7 @@ export const Dropdown = memo(
 
     return (
       <div ref={dropdownRef} className="relative inline-block text-left w-36">
-        <button
-          type="button"
+        <div
           className="flex items-center justify-between w-full px-3 py-2 border border-primary rounded-full md:text-base text-x-xs uppercase"
           onClick={toggleDropdown}
         >
@@ -56,7 +55,7 @@ export const Dropdown = memo(
             icon={faCaretDown}
             className={`ml-2 transition-transform ${isOpen ? 'rotate-180' : 'rotate-0'}`}
           />
-        </button>
+        </div>
 
         <div
           className={`absolute right-0 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 transition-transform duration-300 ease-in-out ${
@@ -64,13 +63,13 @@ export const Dropdown = memo(
           }`}
         >
           {items.map((item) => (
-            <button
+            <ul
               key={item.value}
               className="w-full text-left px-4 py-2 hover:bg-gray-100 md:text-base text-xs uppercase"
               onClick={handleItemClick.bind(null, item)}
             >
-              {item.label}
-            </button>
+              <li>{item.label}</li>
+            </ul>
           ))}
         </div>
       </div>

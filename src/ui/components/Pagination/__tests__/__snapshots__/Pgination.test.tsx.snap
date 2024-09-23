@@ -6,61 +6,55 @@ exports[`Pagination Component should be render match to snapshot 1`] = `
     class="flex justify-center gap-5 mt-4"
   >
     <button
-      class="px-3"
-      disabled=""
+      class="px-4 py-2 rounded-full bg-white"
     >
-      <div
-        class="relative w-[16px] h-[16px]"
-      >
-        <img
-          alt="prev icon"
-          class="transition-opacity duration-300"
-          data-nimg="1"
-          decoding="async"
-          height="16"
-          loading="lazy"
-          src="/prev-icon.svg"
-          style="color: transparent; object-fit: cover;"
-          width="16"
-        />
-      </div>
+      <img
+        alt="prev icon"
+        data-nimg="1"
+        decoding="async"
+        height="16"
+        loading="lazy"
+        src="/prev-icon.svg"
+        style="color: transparent;"
+        width="16"
+      />
     </button>
     <button
-      class="px-4 py-2 bg-white text-second rounded-full drop-shadow-lg"
+      class="px-4 py-2 rounded-full bg-white"
     >
       1
     </button>
     <button
-      class="px-4 py-2 "
+      class="px-4 py-2 rounded-full bg-white text-second drop-shadow-lg"
     >
       2
+    </button>
+    <button
+      class="px-4 py-2 rounded-full bg-white"
+    >
+      3
     </button>
     <span>
       ...
     </span>
     <button
-      class="px-4 py-2 "
+      class="px-4 py-2 rounded-full bg-white"
     >
       5
     </button>
     <button
-      class="px-3"
+      class="px-4 py-2 rounded-full bg-white"
     >
-      <div
-        class="relative w-[16px] h-[16px]"
-      >
-        <img
-          alt="next icon"
-          class="transition-opacity duration-300"
-          data-nimg="1"
-          decoding="async"
-          height="16"
-          loading="lazy"
-          src="/next-icon.svg"
-          style="color: transparent; object-fit: cover;"
-          width="16"
-        />
-      </div>
+      <img
+        alt="next icon"
+        data-nimg="1"
+        decoding="async"
+        height="16"
+        loading="lazy"
+        src="/next-icon.svg"
+        style="color: transparent;"
+        width="16"
+      />
     </button>
   </div>
 </div>

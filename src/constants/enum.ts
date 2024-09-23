@@ -7,6 +7,7 @@ enum SIZE {
 enum TYPE {
   PRIMARY = 'primary',
   SECOND = 'second',
+  THIRD = 'third'
 }
 
 export { SIZE, TYPE };

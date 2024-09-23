@@ -1,6 +1,8 @@
-"use client";
+'use client';
 
-import { useEffect } from "react";
+import { TYPE } from '@/constants';
+import { Button } from '@/ui/components';
+import { useEffect } from 'react';
 
 export default function GlobalError({
   error,
@@ -25,9 +27,9 @@ export default function GlobalError({
       <p className="text-sm text-dark-100 text-center mb-[85px] lg:mb-44">
         The page you were trying to reach is currently unavailable.
       </p>
-      <button className="border border-red-500 p-2" onClick={() => reset()}>
-        Try again
-      </button>
+      <Button variant={TYPE.PRIMARY} onClick={() => reset()}>
+        Try Again
+      </Button>
     </div>
   );
 }

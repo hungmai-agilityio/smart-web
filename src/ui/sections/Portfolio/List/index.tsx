@@ -10,13 +10,15 @@ import { Pagination, Portfolio } from '@/ui/components';
 // Services
 import { getData } from '@/services';
 
-interface PortfolioSectionProps {
+interface PortfolioListProps {
   currentPage: number;
+  queryPage: string;
 }
 
-export const PortfolioSection = async ({
-  currentPage
-}: PortfolioSectionProps) => {
+export const PortfolioList = async ({
+  currentPage,
+  queryPage
+}: PortfolioListProps) => {
   const { data } = await getData<IPortfolio>(`${END_POINT.PORTFOLIO}`);
 
   const limit = 6;
@@ -29,7 +31,7 @@ export const PortfolioSection = async ({
   return (
     <div className="my-8 mx-5">
       <Portfolio images={selectedImages} />
-      <Pagination pageCount={totalPages} currentPage={currentPage} />
+      <Pagination pageCount={totalPages} queryPage={queryPage} />
     </div>
   );
 };

@@ -1,7 +1,5 @@
 import { clsx } from 'clsx';
-
-//Components
-import { Photo } from '@/ui/components/common';
+import Image from 'next/image';
 
 interface StatsRowProps {
   views: number;
@@ -29,13 +27,7 @@ export const StatsRow = ({
       })}
     >
       <div className="flex gap-1 items-center">
-        <div
-          className={clsx('w-icon-xs h-icon-xxs', {
-            'w-7 h-icon-sm': isColumn
-          })}
-        >
-          <Photo src={viewIcon} alt="view icon" autoSize />
-        </div>
+        <Image src={viewIcon} alt="view icon" width={20} height={20} />
         <p
           className={clsx(
             'xl:w-10 w-8 truncate overflow-hidden',
@@ -47,13 +39,7 @@ export const StatsRow = ({
       </div>
 
       <div className="flex gap-1 items-center">
-        <div
-          className={clsx('w-icon-xxs h-icon-xxs', {
-            'w-5 h-icon-xs': isColumn
-          })}
-        >
-          <Photo src={favoriteIcon} alt="likes icon" autoSize />
-        </div>
+        <Image src={favoriteIcon} alt="likes icon" width={15} height={15} />
         <p
           className={clsx(
             'xl:w-10 w-8 truncate overflow-hidden',
@@ -65,13 +51,7 @@ export const StatsRow = ({
       </div>
 
       <div className="flex gap-1 items-center">
-        <div
-          className={clsx('w-icon-xxs h-icon-xxs', {
-            'w-5 h-icon-xs': isColumn
-          })}
-        >
-          <Photo src={commentIcon} alt="comments icon" autoSize />
-        </div>
+        <Image src={commentIcon} alt="comments icon" width={15} height={15} />
         <p
           className={clsx(
             'xl:w-10 w-8 truncate overflow-hidden',

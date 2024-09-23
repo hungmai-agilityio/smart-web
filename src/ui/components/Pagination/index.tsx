@@ -1,23 +1,57 @@
 'use client';
 
+import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { Photo } from '@/ui/components/common';
+import { clsx } from 'clsx';
+import Image from 'next/image';
+
+// Components
+import { Button } from '@/ui/components';
+
+// Constants
+import { TYPE } from '@/constants';
 
 interface PaginationProps {
   pageCount: number;
-  currentPage: number;
+  queryPage: string;
 }
 
-export const Pagination = ({ pageCount, currentPage }: PaginationProps) => {
-  const router = useRouter();
+export const Pagination = ({ pageCount, queryPage }: PaginationProps) => {
+  const { replace } = useRouter();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams.toString());
+
+  // Initialize currentPage based on URL query parameter
+  const initPage = Number(searchParams.get(queryPage)) || 1;
+  const [currentPage, setCurrentPage] = useState<number>(initPage);
 
   // Handles page index changes
   const handlePageChange = (page: number) => {
     if (page >= 1 && page <= pageCount) {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set('portfolio-page', page.toString());
-      router.push(`?${params.toString()}`, { scroll: false });
+      // Get current query params
+      params.set(queryPage, page.toString());
+      replace(`?${params.toString()}`, { scroll: false });
+      setCurrentPage(page);
+    }
+  };
+
+  // Click to return to previous page
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      const newPageIndex = currentPage - 1;
+      params.set(queryPage, newPageIndex.toString());
+      replace(`?${params.toString()}`, { scroll: false });
+      setCurrentPage(newPageIndex);
+    }
+  };
+
+  // Click to go to the next page
+  const handleNext = () => {
+    if (currentPage < pageCount) {
+      const newPageIndex = currentPage + 1;
+      params.set(queryPage, newPageIndex.toString());
+      replace(`?${params.toString()}`, { scroll: false });
+      setCurrentPage(newPageIndex);
     }
   };
 
@@ -26,13 +60,14 @@ export const Pagination = ({ pageCount, currentPage }: PaginationProps) => {
     const pages = [];
 
     const renderPageButton = (page: number) => (
-      <button
+      <Button
         key={page}
-        className={`px-4 py-2 ${currentPage === page ? 'bg-white text-second rounded-full drop-shadow-lg' : ''}`}
+        variant={TYPE.THIRD}
         onClick={handlePageChange.bind(null, page)}
+        className={clsx(currentPage === page && 'text-second drop-shadow-lg')}
       >
         {page}
-      </button>
+      </Button>
     );
 
     // Default page 1
@@ -63,29 +98,21 @@ export const Pagination = ({ pageCount, currentPage }: PaginationProps) => {
 
   return (
     <div className="flex justify-center gap-5 mt-4">
-      <button
-        className="px-3"
-        onClick={handlePageChange.bind(null, currentPage - 1)}
+      <Button
+        variant={TYPE.THIRD}
+        onClick={handlePrevious}
         disabled={currentPage === 1}
       >
-        <Photo
-          src="/prev-icon.svg"
-          alt="prev icon"
-          fixedSize={{ width: 16, height: 16 }}
-        />
-      </button>
+        <Image src="/prev-icon.svg" alt="prev icon" width={16} height={16} />
+      </Button>
       {renderPageNumbers()}
-      <button
-        className="px-3"
-        onClick={handlePageChange.bind(null, currentPage + 1)}
+      <Button
+        variant={TYPE.THIRD}
+        onClick={handleNext}
         disabled={currentPage === pageCount}
       >
-        <Photo
-          src="/next-icon.svg"
-          alt="next icon"
-          fixedSize={{ width: 16, height: 16 }}
-        />
-      </button>
+        <Image src="/next-icon.svg" alt="next icon" width={16} height={16} />
+      </Button>
     </div>
   );
 };

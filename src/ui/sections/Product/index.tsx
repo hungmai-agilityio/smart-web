@@ -13,7 +13,7 @@ import { IProduct } from '@/interface';
 import { CardSkeleton, Description, Heading } from '@/ui/components';
 
 // Sections
-import ProductSection from '@/ui/sections/Product/List';
+import ProductList from '@/ui/sections/Product/List';
 
 export const Product = async () => {
   const { data, error } = await getData<IProduct>(END_POINT.PRODUCTS);
@@ -34,7 +34,7 @@ export const Product = async () => {
       </Description>
 
       <Suspense fallback={<CardSkeleton />}>
-        <ProductSection data={data || []} />
+        <ProductList data={data || []} />
       </Suspense>
     </div>
   );

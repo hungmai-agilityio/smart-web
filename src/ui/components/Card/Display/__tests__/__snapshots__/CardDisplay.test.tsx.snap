@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CardDisplay Should match snapshot 1`] = `
+<div>
+  <div
+    class="border rounded-lg shadow-md"
+  >
+    <div
+      class="w-full aspect-image relative"
+    >
+      <div
+        class="relative w-full h-full"
+      >
+        <img
+          alt="Project One"
+          class="transition-opacity duration-300"
+          data-nimg="fill"
+          decoding="async"
+          loading="lazy"
+          sizes="100vw"
+          src="/_next/image?url=%2Fbackground-hero.webp&w=3840&q=75"
+          srcset="/_next/image?url=%2Fbackground-hero.webp&w=640&q=75 640w, /_next/image?url=%2Fbackground-hero.webp&w=750&q=75 750w, /_next/image?url=%2Fbackground-hero.webp&w=828&q=75 828w, /_next/image?url=%2Fbackground-hero.webp&w=1080&q=75 1080w, /_next/image?url=%2Fbackground-hero.webp&w=1200&q=75 1200w, /_next/image?url=%2Fbackground-hero.webp&w=1920&q=75 1920w, /_next/image?url=%2Fbackground-hero.webp&w=2048&q=75 2048w, /_next/image?url=%2Fbackground-hero.webp&w=3840&q=75 3840w"
+          style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent; background-size: cover; background-position: 50% 50%; background-repeat: no-repeat;"
+        />
+      </div>
+    </div>
+    <div
+      class="md:flex hidden items-center w-full justify-between py-3 text-x-xs"
+    >
+      <div
+        class="flex px-3 justify-between md:items-center w-full"
+      >
+        <div
+          class="flex gap-1 items-center"
+        >
+          <img
+            alt="view icon"
+            data-nimg="1"
+            decoding="async"
+            height="20"
+            loading="lazy"
+            src="/view-dark.svg"
+            style="color: transparent;"
+            width="20"
+          />
+          <p
+            class="xl:w-10 w-8 truncate overflow-hidden"
+          >
+            81532
+          </p>
+        </div>
+        <div
+          class="flex gap-1 items-center"
+        >
+          <img
+            alt="likes icon"
+            data-nimg="1"
+            decoding="async"
+            height="15"
+            loading="lazy"
+            src="/likes.svg"
+            style="color: transparent;"
+            width="15"
+          />
+          <p
+            class="xl:w-10 w-8 truncate overflow-hidden"
+          >
+            444
+          </p>
+        </div>
+        <div
+          class="flex gap-1 items-center"
+        >
+          <img
+            alt="comments icon"
+            data-nimg="1"
+            decoding="async"
+            height="15"
+            loading="lazy"
+            src="/comments.svg"
+            style="color: transparent;"
+            width="15"
+          />
+          <p
+            class="xl:w-10 w-8 truncate overflow-hidden"
+          >
+            1232
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

@@ -1,5 +1,5 @@
-import React, { Suspense } from 'react';
 import { clsx } from 'clsx';
+import Image from 'next/image';
 
 // Constants
 import { abel } from '@/constants/fonts';
@@ -8,7 +8,7 @@ import { abel } from '@/constants/fonts';
 import { IPortfolio } from '@/interface';
 
 // Components
-import { Description, Heading, Photo, SkeletonImage } from '@/ui/components';
+import { Description, Heading, CardImage } from '@/ui/components';
 
 // Utils
 import { formatDate } from '@/utils/format';
@@ -22,7 +22,7 @@ export const Portfolio = ({ images }: PortfolioProps) => {
     <div className="grid md:grid-cols-2 grid-cols-1">
       {images.map((item) => (
         <div key={item.id} className="w-full h-portfolio">
-          <Photo src={item.image} alt={item.name} autoSize isBlur>
+          <CardImage src={item.image} alt={item.name} autoSize isBlur>
             <div className="flex w-full md:justify-end">
               <div className="lg:w-1/2">
                 <Heading styles="xl:text-3xl lg:text-xl font-bold text-base">
@@ -42,37 +42,37 @@ export const Portfolio = ({ images }: PortfolioProps) => {
 
                 <div className="md:flex xl:gap-10 gap-5 mt-4 hidden text-sm">
                   <div className="flex gap-3 items-center">
-                    <Photo
+                    <Image
                       src="/view-white.svg"
                       alt="view"
-                      autoSize
-                      styles="md:w-6 md:h-3"
+                      width={20}
+                      height={20}
                     />
                     <p>{item.view}</p>
                   </div>
 
                   <div className="flex gap-3 items-center">
-                    <Photo
+                    <Image
                       src="/likes-white.svg"
                       alt="likes"
-                      autoSize
-                      styles="md:w-icon-xs md:h-3"
+                      width={15}
+                      height={15}
                     />
                     <p>{item.favorite}</p>
                   </div>
                   <div className="flex gap-3 items-center">
-                    <Photo
+                    <Image
                       src="/cmt-white.svg"
                       alt="comment"
-                      autoSize
-                      styles="md:w-icon-xs md:h-3"
+                      width={15}
+                      height={15}
                     />
                     <p>{item.comment}</p>
                   </div>
                 </div>
               </div>
             </div>
-          </Photo>
+          </CardImage>
         </div>
       ))}
     </div>

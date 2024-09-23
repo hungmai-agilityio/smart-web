@@ -1,7 +1,7 @@
 import { END_POINT } from '@/constants';
 import { IPlace, ISearchParams } from '@/interface';
 import { getData } from '@/services';
-import { Photo } from '@/ui/components';
+import { CardImage } from '@/ui/components';
 
 interface PlaceListProps {
   searchParams: ISearchParams;
@@ -26,7 +26,7 @@ const PlaceList = async ({ searchParams }: PlaceListProps) => {
             key={item.id}
             className="w-full lg:h-place-lg md:h-place-md h-place-sm mx-auto"
           >
-            <Photo src={item.image} alt={item.name} autoSize isBlur/>
+            <CardImage src={item.image} alt={item.name} autoSize isBlur />
           </div>
         ))
       ) : (

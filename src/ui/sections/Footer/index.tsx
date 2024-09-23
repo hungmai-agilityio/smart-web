@@ -1,14 +1,9 @@
-'use client';
+import { navItems } from '@/mocks';
+import Image from 'next/image';
 
-import { END_POINT } from '@/constants';
-import { NavItem } from '@/ui/components';
-import { Photo } from '@/ui/components/common';
+import { Navbar, ScrollTopButton } from '@/ui/components';
 
 export const Footer = () => {
-  const scrollTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
   return (
     <footer className="lg:container mt-6 mx-auto bg-black lg:bg-opacity-90 bg-opacity-85 text-white xl:py-28 xl:px-36 py-10 px-10 md:text-base text-sm">
       <div className="px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -34,22 +29,33 @@ export const Footer = () => {
         <div className="flex flex-col items-start md:ml-24">
           <h3 className="font-bold uppercase mb-4">Follow Us</h3>
           <div className="flex gap-10 items-center">
-            <a href="#" className="opacity-50 xl:w-6 xl:h-6 w-4 h-4">
-              <Photo
+            <a href="#">
+              <Image
                 src="/pinterest.svg"
                 alt="Pinterest icon"
-                autoSize
+                width={16}
+                height={16}
+                className="xl:w-6 xl:h-6 w-4 h-4 opacity-50"
                 priority
               />
             </a>
-            <a href="#" className="opacity-50 xl:w-6 xl:h-6 w-4 h-4">
-              <Photo src="/twitter.svg" alt="Twitter icon" autoSize priority />
+            <a href="#">
+              <Image
+                src="/twitter.svg"
+                alt="Twitter icon"
+                width={16}
+                height={16}
+                className="xl:w-6 xl:h-6 w-4 h-4 opacity-50"
+                priority
+              />
             </a>
-            <a href="#" className="opacity-50 xl:w-6 xl:h-6 w-4 h-4">
-              <Photo
+            <a href="#">
+              <Image
                 src="/facebook.svg"
                 alt="Facebook icon"
-                autoSize
+                width={16}
+                height={16}
+                className="xl:w-6 xl:h-6 w-4 h-4 opacity-50"
                 priority
               />
             </a>
@@ -73,23 +79,13 @@ export const Footer = () => {
             © 2023 SmartWeb
           </p>
 
-          <div className="flex justify-center" onClick={scrollTop}>
-            <Photo
-              src="/go-top-button.svg"
-              alt="Go top icon"
-              fixedSize={{ width: 36, height: 36 }}
-              priority
-            />
-          </div>
+          <ScrollTopButton />
         </div>
-        <nav className="flex justify-center lg:gap-7 gap-3 w-full mb-4 opacity-70">
-          <NavItem name="home" url={END_POINT.HOME} />
-          <NavItem name="places" url={END_POINT.PLACES} />
-          <NavItem name="products" url={END_POINT.PRODUCTS} />
-          <NavItem name="projects" url={END_POINT.PROJECTS} />
-          <NavItem name="portfolio" url={END_POINT.PORTFOLIO} />
-          <NavItem name="about us" url={END_POINT.ABOUT_US} />
-        </nav>
+
+        <Navbar
+          items={navItems}
+          styles="flex justify-center lg:gap-7 gap-3 w-full mb-4 opacity-70`"
+        />
       </div>
     </footer>
   );

@@ -8,23 +8,16 @@ exports[`StatsRow component should be render match to snapshot 1`] = `
     <div
       class="flex gap-1 items-center"
     >
-      <div
-        class="w-icon-xs h-icon-xxs"
-      >
-        <div
-          class="relative w-full h-full"
-        >
-          <img
-            alt="view icon"
-            class="transition-opacity duration-300"
-            data-nimg="fill"
-            decoding="async"
-            loading="lazy"
-            src="/view-dark.svg"
-            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
-          />
-        </div>
-      </div>
+      <img
+        alt="view icon"
+        data-nimg="1"
+        decoding="async"
+        height="20"
+        loading="lazy"
+        src="/view-dark.svg"
+        style="color: transparent;"
+        width="20"
+      />
       <p
         class="xl:w-10 w-8 truncate overflow-hidden"
       >
@@ -34,23 +27,16 @@ exports[`StatsRow component should be render match to snapshot 1`] = `
     <div
       class="flex gap-1 items-center"
     >
-      <div
-        class="w-icon-xxs h-icon-xxs"
-      >
-        <div
-          class="relative w-full h-full"
-        >
-          <img
-            alt="likes icon"
-            class="transition-opacity duration-300"
-            data-nimg="fill"
-            decoding="async"
-            loading="lazy"
-            src="/likes.svg"
-            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
-          />
-        </div>
-      </div>
+      <img
+        alt="likes icon"
+        data-nimg="1"
+        decoding="async"
+        height="15"
+        loading="lazy"
+        src="/likes.svg"
+        style="color: transparent;"
+        width="15"
+      />
       <p
         class="xl:w-10 w-8 truncate overflow-hidden"
       >
@@ -60,23 +46,16 @@ exports[`StatsRow component should be render match to snapshot 1`] = `
     <div
       class="flex gap-1 items-center"
     >
-      <div
-        class="w-icon-xxs h-icon-xxs"
-      >
-        <div
-          class="relative w-full h-full"
-        >
-          <img
-            alt="comments icon"
-            class="transition-opacity duration-300"
-            data-nimg="fill"
-            decoding="async"
-            loading="lazy"
-            src="/comments.svg"
-            style="position: absolute; height: 100%; width: 100%; left: 0px; top: 0px; right: 0px; bottom: 0px; object-fit: cover; color: transparent;"
-          />
-        </div>
-      </div>
+      <img
+        alt="comments icon"
+        data-nimg="1"
+        decoding="async"
+        height="15"
+        loading="lazy"
+        src="/comments.svg"
+        style="color: transparent;"
+        width="15"
+      />
       <p
         class="xl:w-10 w-8 truncate overflow-hidden"
       >

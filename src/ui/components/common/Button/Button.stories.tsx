@@ -9,9 +9,12 @@ import { TYPE } from '@/constants';
 const meta: Meta<typeof Button> = {
   component: Button,
   tags: ['autodocs'],
+  parameters: {
+    layout: 'centered'
+  },
   argTypes: {
-    name: {
-      description: 'Name button'
+    children: {
+      description: 'Name of the button or Content inside '
     },
     variant: {
       description: 'Set type optional for Button'
@@ -19,7 +22,7 @@ const meta: Meta<typeof Button> = {
     onClick: {
       description: 'Handle the event when clicking on the button'
     },
-    styles: {
+    className: {
       description: 'Add custom css'
     },
     disabled: {
@@ -34,7 +37,7 @@ type Story = StoryObj<typeof Button>;
 
 export const Primary: Story = {
   args: {
-    name: 'Submit',
+    children: 'Submit',
     variant: TYPE.PRIMARY,
     onClick: () => alert('submit')
   }
@@ -42,7 +45,7 @@ export const Primary: Story = {
 
 export const Secondary: Story = {
   args: {
-    name: 'Submit',
+    children: 'Submit',
     variant: TYPE.SECOND,
     onClick: () => alert('submit')
   }
@@ -50,7 +53,16 @@ export const Secondary: Story = {
 
 export const ButtonDisabled: Story = {
   args: {
-    name: 'Send',
+    children: 'Send',
     disabled: true
+  }
+};
+
+export const ButtonThird: Story = {
+  args: {
+    children: '1',
+    disabled: true,
+    variant: TYPE.THIRD,
+    className: 'w-10 p-2 bg-white text-second rounded-full drop-shadow-lg'
   }
 };

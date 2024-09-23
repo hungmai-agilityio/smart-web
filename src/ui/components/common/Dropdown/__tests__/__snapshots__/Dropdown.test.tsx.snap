@@ -5,9 +5,8 @@ exports[`Dropdown Component should be render match to snapshot 1`] = `
   <div
     class="relative inline-block text-left w-36"
   >
-    <button
+    <div
       class="flex items-center justify-between w-full px-3 py-2 border border-primary rounded-full md:text-base text-x-xs uppercase"
-      type="button"
     >
       Option 1
       <svg
@@ -25,25 +24,31 @@ exports[`Dropdown Component should be render match to snapshot 1`] = `
           fill="currentColor"
         />
       </svg>
-    </button>
+    </div>
     <div
       class="absolute right-0 w-full mt-1 bg-white border border-gray-300 rounded-md shadow-lg z-10 transition-transform duration-300 ease-in-out opacity-0 translate-y-2"
     >
-      <button
+      <ul
         class="w-full text-left px-4 py-2 hover:bg-gray-100 md:text-base text-xs uppercase"
       >
-        Option 1
-      </button>
-      <button
+        <li>
+          Option 1
+        </li>
+      </ul>
+      <ul
         class="w-full text-left px-4 py-2 hover:bg-gray-100 md:text-base text-xs uppercase"
       >
-        Option 2
-      </button>
-      <button
+        <li>
+          Option 2
+        </li>
+      </ul>
+      <ul
         class="w-full text-left px-4 py-2 hover:bg-gray-100 md:text-base text-xs uppercase"
       >
-        Option 3
-      </button>
+        <li>
+          Option 3
+        </li>
+      </ul>
     </div>
   </div>
 </div>
