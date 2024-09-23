@@ -1,6 +1,6 @@
 'use client';
 
-import { memo, useCallback } from 'react';
+import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 
 // Constants
@@ -14,21 +14,20 @@ interface CategoryProps {
   queryParam: string;
 }
 
-export const Category = memo(({ categories, queryParam }: CategoryProps) => {
-  const router = useRouter();
+export const Category = ({ categories, queryParam }: CategoryProps) => {
+  const { replace } = useRouter();
   const searchParams = useSearchParams();
+  const params = new URLSearchParams(searchParams.toString());
+  const initCategory = searchParams.get(queryParam) || '';
 
-  const currentCategory = searchParams.get(queryParam);
+  const [currentCategory, setCurrentCategory] = useState<string>(initCategory);
 
   // Update category and URL when a new category is selected
-  const handleCategorySelect = useCallback(
-    (category: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(queryParam, category);
-      router.push(`?${params.toString()}`, { scroll: false });
-    },
-    [searchParams, router, queryParam]
-  );
+  const handleCategorySelect = (category: string) => {
+    params.set(queryParam, category);
+    replace(`?${params.toString()}`, { scroll: false });
+    setCurrentCategory(category);
+  };
 
   const dropdownItems: ItemProps[] = categories.map((category) => ({
     label: category,
@@ -59,4 +58,4 @@ export const Category = memo(({ categories, queryParam }: CategoryProps) => {
       </div>
     </>
   );
-});
+};
