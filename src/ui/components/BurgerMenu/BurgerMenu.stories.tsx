@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react';
 import { BurgerMenu } from '@/ui/components';
-import { navItems } from '@/mocks';
+import { navItems } from '@/constants';
 
 const meta: Meta<typeof BurgerMenu> = {
   component: BurgerMenu,

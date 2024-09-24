@@ -25,7 +25,7 @@ exports[`CardDetail Should match snapshot 1`] = `
       </div>
     </div>
     <div
-      class="mt-4 md:h-32 overflow-hidden text-center"
+      class="mt-4 text-center md:h-32 overflow-hidden"
     >
       <p
         class="className font-bold lg:text-lg text-base"

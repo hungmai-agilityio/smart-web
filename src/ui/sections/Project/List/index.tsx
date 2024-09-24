@@ -25,10 +25,18 @@ export const ProjectList = async ({ searchParams }: ProjectListProps) => {
 
   const filtered = data as IProject[];
   const projects = filtered.slice(0, maxItems);
+
   return (
     <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-2 gap-6 w-5/6 mx-auto">
       {projects.map((item) => (
-        <CardDisplay item={item} key={item.id} />
+        <CardDisplay
+          key={item.id}
+          image={item.image}
+          name={item.name}
+          views={item.views}
+          favorites={item.favorite}
+          comments={item.comment}
+        />
       ))}
     </div>
   );

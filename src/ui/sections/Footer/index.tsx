@@ -1,4 +1,4 @@
-import { navItems } from '@/mocks';
+import { navItems } from '@/constants';
 import Image from 'next/image';
 
 import { Navbar, ScrollTopButton } from '@/ui/components';

@@ -13,8 +13,26 @@ const meta: Meta<typeof CardDetail> = {
     layout: 'centered'
   },
   argTypes: {
-    item: {
-      description: 'item to render data'
+    id: {
+      description: 'Data id'
+    },
+    image: {
+      description: 'Image of item for src'
+    },
+    name: {
+      description: 'Name for the image when the image is corrupted'
+    },
+    users: {
+      description: 'List user'
+    },
+    nameButton: {
+      description: 'Name of the button'
+    },
+    onClick: {
+      description: 'Handles button clicks to get item information'
+    },
+    view: {
+      description: 'Total number of people who viewed the item'
     }
   }
 };
@@ -23,8 +41,28 @@ export default meta;
 
 type Story = StoryObj<typeof CardDetail>;
 
+const handleClick = (id: string) => {
+  alert(`Clicked on ${id}`);
+};
+
 export const Default: Story = {
   args: {
-    item: mockProduct[0]
+    id: mockProduct[0].id,
+    name: mockProduct[0].name,
+    image: mockProduct[0].image,
+    users: mockProduct[0].users,
+    view: mockProduct[0].view
+  }
+};
+
+export const HasButton: Story = {
+  args: {
+    id: mockProduct[0].id,
+    name: mockProduct[0].name,
+    image: mockProduct[0].image,
+    users: mockProduct[0].users,
+    view: mockProduct[0].view,
+    nameButton: 'Review',
+    onClick: handleClick
   }
 };

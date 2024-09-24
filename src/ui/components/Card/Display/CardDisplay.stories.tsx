@@ -14,8 +14,20 @@ const meta: Meta<typeof CardDisplay> = {
     layout: 'centered'
   },
   argTypes: {
-    item: {
-      description: 'item to render data'
+    views: {
+      description: 'Total number of people who viewed the post'
+    },
+    image: {
+      description: 'Image of item for src'
+    },
+    name: {
+      description: 'Name for the image when the image is corrupted'
+    },
+    comments: {
+      description: 'Total number of people who commented on the post'
+    },
+    favorites: {
+      description: 'Total number of people who liked the post'
     }
   }
 };
@@ -26,6 +38,10 @@ type Story = StoryObj<typeof CardDisplay>;
 
 export const Default: Story = {
   args: {
-    item: mockProject[0]
+    name: mockProject[0].name,
+    image: mockProject[0].image,
+    views: mockProject[0].views,
+    comments: mockProject[0].comment,
+    favorites: mockProject[0].favorite
   }
 };

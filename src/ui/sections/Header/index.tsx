@@ -1,4 +1,4 @@
-import { navItems } from '@/mocks';
+import { navItems } from '@/constants';
 import { Brand, BurgerMenu } from '@/ui/components';
 
 export const Header = () => {
