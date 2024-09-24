@@ -1,5 +1,4 @@
 // Interfaces
-import { END_POINT } from '@/constants';
 import { IPortfolio, IProduct, IProject } from '@/interface';
 
 export const itemDropdown = [
@@ -8,7 +7,7 @@ export const itemDropdown = [
   { label: 'Option 3', value: 'option3' }
 ];
 
-export const mockImages: IPortfolio[] = [
+export const mockPortfolio: IPortfolio[] = [
   {
     id: '1',
     name: 'Project One',

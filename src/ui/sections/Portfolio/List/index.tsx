@@ -5,7 +5,7 @@ import { END_POINT } from '@/constants';
 import { IPortfolio } from '@/interface';
 
 // Components
-import { Pagination, Portfolio } from '@/ui/components';
+import { Pagination, SceneryDetail } from '@/ui/components';
 
 // Services
 import { getData } from '@/services';
@@ -30,7 +30,21 @@ export const PortfolioList = async ({
 
   return (
     <div className="my-8 mx-5">
-      <Portfolio images={selectedImages} />
+      <div className="grid md:grid-cols-2 grid-cols-1">
+        {selectedImages.map((item) => (
+          <SceneryDetail
+            key={item.id}
+            comment={item.comment}
+            date={item.date}
+            detail={item.detail}
+            favorite={item.favorite}
+            image={item.image}
+            metrics
+            name={item.name}
+            view={item.view}
+          />
+        ))}
+      </div>
       <Pagination pageCount={totalPages} queryPage={queryPage} />
     </div>
   );
